@@ -2,15 +2,16 @@ import { StyleSheet, Text, View, Button, Image, ImageBackground, ScrollView,Touc
 import {useState} from 'react';
 import { Feather } from '@expo/vector-icons';
 
-export default function Details({image, description, name, price, plus,minus, Totalprice,thisFunction}) {
-    const[ItemCount,setItemCount] = useState(0);
-    function order(){
+export default function Details({image, description, name, price, ThisFunction,setThisFunction}) {
+  const[ItemCount,setItemCount] = useState(0);
+  function order(){
         setItemCount(ItemCount + 1);
-      // thisFunction(Totalprice + price);
+        setThisFunction(ThisFunction + price);
     }
 
     function orderless(){
-        setItemCount(ItemCount - 1)
+        setItemCount(ItemCount - 1);
+        setThisFunction(ThisFunction - price);
     }
 
   return (
@@ -34,11 +35,11 @@ export default function Details({image, description, name, price, plus,minus, To
             <View style= {{flexDirection: 'row',justifyContent: 'space-between', width: 315,marginTop:-10,marginLeft: 50}}>
             <View style = {{width: '80%',alignItems: 'center',flexDirection: 'row'}}>
             <TouchableOpacity>
-            <Text style= {{fontSize: 15,color:'#000',fontWeight: '600',marginRight:10}} onPress={orderless}>{minus}</Text>
+            <Text style= {{fontSize: 15,color:'#000',fontWeight: '600',marginRight:10}} onPress={orderless}>-</Text>
             </TouchableOpacity>
             <Text style= {{fontSize: 18,color:'#000',fontWeight: '700',marginRight:10}}>{ItemCount}</Text>
             <TouchableOpacity>
-            <Text style= {{fontSize: 15,color:'#000',fontWeight: '600' }}  onPress={order}>{plus}</Text>
+            <Text style= {{fontSize: 15,color:'#000',fontWeight: '600' }}  onPress={order}>+</Text>
             </TouchableOpacity>
             </View>
             </View>

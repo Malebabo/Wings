@@ -4,7 +4,7 @@ import { Feather, Ionicons,Entypo } from '@expo/vector-icons';
 import Details from './Details';
 
 export default function App() {
-  const[Totalprice, thisFunction]=useState(0)
+  const[ThisFunction, setThisFunction]=useState(0);
   
   var english = require('./assets/brkfst.jpg');
   var easy = require('./assets/brkfst2.jpg');
@@ -106,28 +106,26 @@ export default function App() {
             <ScrollView>
             <View style= {{width: '100%'}}>
               <Details image={english} name="English Breakfast"
-              description="Bread, Bacon, Egges, Beans, Sausages" price={25.00}
-              plus= "+" minus= "-"></Details>
+              description="Bread, Bacon, Egges, Beans, Sausages" price={25.00} ThisFunction={ThisFunction} setThisFunction={setThisFunction}></Details>
 
               <Details image={easy} name="Easy Breakfast"
-              description="Toast, Eggs, Tomato, Bacon, Russion" price={19.00} plus= "+" minus= "-" Totalprice={Totalprice} setTotalprice={thisFunction}></Details>
+              description="Toast, Eggs, Tomato, Bacon, Russion" price={19.00} ThisFunction={ThisFunction} setThisFunction={setThisFunction}></Details>
 
               <Details image={wings} name="Wings Breakfast"
-              description="Waffles, Eggs, Tomato, Bacon, Sausages" price={30.00} plus= "+" minus= "-" Totalprice={Totalprice} setTotalprice={thisFunction}></Details>
+              description="Waffles, Eggs, Tomato, Bacon, Sausages" price={30.00} ThisFunction={ThisFunction} setThisFunction={setThisFunction}></Details>
               <Details image={Pancake} name="Pancake Breakfast"
-              description="Pancake, Bacon, Grape, Strawberry" price={27.00} plus= "+" minus= "-" Totalprice={Totalprice} setTotalprice={thisFunction}>
-              </Details>
+              description="Pancake, Bacon, Grape, Strawberry" price={27.00} ThisFunction={ThisFunction} setThisFunction={setThisFunction}></Details>
               <Details image={Veggie} name="Veggie Breakfast"
-              description="Avocado, Eggs, Papper, Green beans" price={15.00} plus= "+" minus= "-" Totalprice={Totalprice} setTotalprice={thisFunction}></Details>
+              description="Avocado, Eggs, Papper, Green beans" price={15.00} ThisFunction={ThisFunction} setThisFunction={setThisFunction}></Details>
               <Details image={continental} name="Continental Breakfast"
-              description="Bacon, Eggs, Mushroom,Tomato, Bread" price={22.00} plus= "+" minus= "-" Totalprice={Totalprice} setTotalprice={thisFunction}></Details>
+              description="Bacon, Eggs, Mushroom,Tomato, Bread" price={22.00} ThisFunction={ThisFunction} setThisFunction={setThisFunction}></Details>
               </View>
               </ScrollView>
 
               <View style = {{flexDirection: 'row', justifyContent: 'space-between'}}>
                 <View style = {{backgroundColor: '#CFD8DC',width: 230, height: 25,borderWidth:2,borderColor:'#B0BEC5'
               ,borderBottomLeftRadius: 20,marginTop:7,marginBottom:5,borderTopRightRadius: 20,marginLeft: 10}}>
-                <Text style = {{fontSize:   13, color:'#455A64', marginLeft: 10}}>The total price of your order is  M{Totalprice} </Text>
+                <Text style = {{fontSize:   13, color:'#455A64', marginLeft: 10}}>The total price of your order is  M{ThisFunction} </Text>
               </View>
               <TouchableOpacity>
               <View style = {{width:80, height: 25, backgroundColor: '#1565C080', borderRadius: 30,marginLeft: 10,marginTop: 7}}>
@@ -170,7 +168,7 @@ const styles = StyleSheet.create({
    borderColor:'#BDBDBD',
    borderRadius: 17,
    width: 110,
-   marginLeft: 140,
+   marginLeft: 130,
    marginTop: 80,
    padding: 5,
    height: 27,
